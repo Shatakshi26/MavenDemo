@@ -3,13 +3,13 @@ pipeline{
  agent { label 'java8' }
  stages{
 	stage('Build'){
-	node{
+	steps{
 	checkout scm
 	sh 'mvn clean install'
 	}
      }
     stage('test'){
-    node{
+    steps{
 
     try {
         // Any maven phase that that triggers the test phase can be used here.
@@ -24,12 +24,14 @@ pipeline{
    }
    }
    stage('deploy'){
+	   steps{
     echo "Im deploying now!"
 	   when {
               expression {
                 currentBuild.result == null || currentBuild.result == 'SUCCESS'
               }
             }
+	   }
 }
 }
 }
