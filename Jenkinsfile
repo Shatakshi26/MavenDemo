@@ -10,17 +10,13 @@ pipeline{
      }
     stage('test'){
     steps{
-
-    try {
         // Any maven phase that that triggers the test phase can be used here.
         sh 'mvn test -B'
-    } catch(err) {
-        if (currentBuild.result == 'UNSTABLE')
+           if (currentBuild.result == 'UNSTABLE')
     	currentBuild.result = 'FAILURE'
   	throw err
-    }finally{
+   
   step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-}
    }
    }
    stage('deploy'){
