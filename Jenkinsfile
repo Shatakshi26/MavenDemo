@@ -22,6 +22,7 @@ pipeline{
   step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 }
    }
+   }
    stage('deploy'){
     echo "Im deploying now!"
 	   when {
