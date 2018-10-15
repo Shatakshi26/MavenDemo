@@ -1,6 +1,5 @@
 #!/usr/bin/env groovy
 pipeline{
- agent { label 'java8' }
  stages{
 	stage('Build'){
 	steps{
