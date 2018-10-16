@@ -29,7 +29,7 @@ stage('Build'){
 	 
    script{
      
-   sh 'mvn test -B'
+   bat 'mvn test -B'
 	
     if (currentBuild.result == 'UNSTABLE'){
   
