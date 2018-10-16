@@ -53,7 +53,7 @@ stage('Build'){
  
    echo "Im deploying now!"
 
-	bat 'scp target/*.war C:/Users/ShatakshiPandey/Downloads/apache-tomcat-9.0.12-windows-x64/apache-tomcat-9.0.12/webapps'
+	bat 'scp target/*.jar C:/Users/ShatakshiPandey/Downloads/apache-tomcat-9.0.12-windows-x64/apache-tomcat-9.0.12/webapps'
 
 	   }
 }
