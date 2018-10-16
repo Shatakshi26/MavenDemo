@@ -53,15 +53,7 @@ stage('Build'){
  
    echo "Im deploying now!"
 
-	   when {
-       
-       expression {
-        
-        currentBuild.result == null || currentBuild.result == 'SUCCESS'
-     
-         }
-        
-    }
+	bat 'scp target/*.war C:/Users/ShatakshiPandey/Downloads/apache-tomcat-9.0.12-windows-x64/apache-tomcat-9.0.12/webapps'
 
 	   }
 }
