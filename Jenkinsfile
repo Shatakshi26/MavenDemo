@@ -5,7 +5,7 @@ agent any
 	stage('Build'){
 	steps{
 	checkout scm
-	sh 'mvn clean install'
+	bat 'mvn clean install'
 	}
      }
     stage('test'){
